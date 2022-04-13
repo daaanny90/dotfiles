@@ -1,0 +1,25 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ["~"]
+
+- link:
+    ~/.gitconfig: files/git/gitconfig
+    ~/.vim: files/vim
+    ~/.oh-my-szh: files/oh-my-szh
+    ~/.netlify: files/netlify
+    ~/.zshrc: files/zshrc
+    ~/.vscode: files/vscode
+    ~/.vimrc: files/vimrc
+    ~/.config/nvim/init.vim: files/vimrc
+    ~/.gitignore_global: files/git/gitignore_global
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
+- brewfile:
+    - files/Brewfile
+

@@ -1,0 +1,37 @@
+if exists('g:vscode')
+else
+	syntax on
+	set number relativenumber
+	set noerrorbells
+	set tabstop=2 softtabstop=2
+	set shiftwidth=2
+	set expandtab
+	set smartindent
+	set nu
+	set nowrap
+	set smartcase
+	set noswapfile
+	set nobackup
+	set undodir=~/.vim/undodir
+	set undofile
+	set incsearch
+endif
+
+nmap <Space> <Plug>(easymotion-bd-w)
+
+call plug#begin('~/.vim/plugged')
+
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
+Plug 'morhetz/gruvbox', Cond(!exists('g:vscode'))
+Plug 'scrooloose/nerdtree', Cond(!exists('g:vscode'))
+Plug 'itchyny/lightline.vim', Cond(!exists('g:vscode'))
+Plug 'editorconfig/editorconfig-vim', Cond(!exists('g:vscode'))
+Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
+Plug 'easymotion/vim-easymotion', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-surround'
+
+call plug#end()

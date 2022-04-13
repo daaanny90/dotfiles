@@ -1,0 +1,6 @@
+[user]
+	name = Danny Spina
+	email = danny@ostec.de
+[core]
+	autocrlf = input
+	excludesfile = /Users/dannyspina/.gitignore_global

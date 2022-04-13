@@ -1,0 +1,107 @@
+{
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "redhat.telemetry.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.confirmSync": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.linkedEditing": true,
+    "files.autoSave": "onFocusChange",
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnPaste": true,
+    "blade.format.enable": true,
+    "vetur.format.defaultFormatterOptions": {
+
+        "js-beautify-html": {
+            "wrap_attributes": "force-expand-multiline"
+        },
+        "prettyhtml": {
+            "printWidth": 100,
+            "singleQuote": false,
+            "wrapAttributes": false,
+            "sortAttributes": false
+        }
+    },
+    "gitlab.instanceUrl": "https://gitlab-berlin.global.umusic.net/",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.files.associations": {
+        "*.blade.php":"laravel"
+    },
+    "debug.allowBreakpointsEverywhere": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.inheritEnv": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.defaultGravatarsStyle": "retro",
+    "gitlens.views.branches.pullRequests.showForBranches": false,
+    "gitlens.views.branches.pullRequests.enabled": false,
+    "gitlens.views.branches.showBranchComparison": false,
+    "yaml.schemas": {
+        "file:///Users/dannyspina/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "atlascode.jira.jqlList": [
+        {
+            "id": "5284b4c5-443a-4281-a961-65a06287573a",
+            "enabled": true,
+            "name": "My preisvergleich Issues",
+            "query": "assignee = currentUser()",
+            "siteId": "c03d55d8-ce07-42be-8acb-a68881958ed3",
+            "monitor": false
+        }
+    ],
+    "terminal.integrated.enableBell": true,
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "editor.fontSize": 14,
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[php]": {
+    
+    },
+    "editor.tabSize": 2,
+    "svelte.enable-ts-plugin": true,
+    "svelte.language-server.runtime": "/Users/dannyspina/.nvm/versions/node/v16.8.0/bin/node",
+    "emmet.includeLanguages": {
+        "vue": "html"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "gitlens.codeLens.enabled": false,
+    "atlascode.jira.explorer.fetchAllQueryResults": true,
+    "atlascode.jira.startWorkBranchTemplate.customPrefixes": [],
+    "atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}{{{issueKey}}}_{{{summary}}}",
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    "vetur.useWorkspaceDependencies": true,
+    "vetur.validation.templateProps": true,
+    "atlascode.jira.enabled": true,
+    "atlascode.jira.lastCreateSiteAndProject": {
+        "siteId": "31ffa323-d049-47fb-8e92-39309e2daac2",
+        "projectKey": "BD"
+    },
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.overviewRulerBorder": false,
+    "zenMode.centerLayout": false,
+    "zenMode.fullScreen": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.lineNumbers": "relative",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
+}
