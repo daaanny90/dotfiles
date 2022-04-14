@@ -12,4 +12,13 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+platform="$(uname -s)"
+if [[ $platform == "Darwin" ]]; then
+	# Brew
+	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir plugins/dotbot-brew -c "${CONFIG}" "${@}"
+fi
+
+# commented for test purposes
+# NeoVim & Vim Plugins https://github.com/junegunn/vim-plug
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

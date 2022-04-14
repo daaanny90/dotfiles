@@ -10,7 +10,6 @@
     ~/.gitconfig: files/git/gitconfig
     ~/.vim: files/vim
     ~/.oh-my-szh: files/oh-my-szh
-    ~/.netlify: files/netlify
     ~/.zshrc: files/zshrc
     ~/.vscode: files/vscode
     ~/.vimrc: files/vimrc
