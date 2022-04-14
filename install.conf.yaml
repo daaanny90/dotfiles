@@ -15,6 +15,7 @@
     ~/.vimrc: files/vimrc
     ~/.config/nvim/init.vim: files/vimrc
     ~/.gitignore_global: files/git/gitignore_global
+    ~/Pictures/Wallpaper: files/wallpaper
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
