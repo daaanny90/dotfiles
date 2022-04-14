@@ -15,7 +15,7 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 platform="$(uname -s)"
 if [[ $platform == "Darwin" ]]; then
 	# Brew
-	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir ./dotbot-brew -c "${CONFIG}" "${@}"
+	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir plugins/dotbot-brew -c "${CONFIG}" "${@}"
 fi
 
 # commented for test purposes
