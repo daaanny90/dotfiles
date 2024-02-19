@@ -109,5 +109,3 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# API KEYS
-export OPENAI_API_KEY="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"
