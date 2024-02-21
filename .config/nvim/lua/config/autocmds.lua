@@ -26,6 +26,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
           client.server_capabilities.documentFormattingProvider = false
         end
       end
+    -- prevent tsserver and volar competing
+    elseif client.name == "tsserver" then
+      for _, client_ in pairs(active_clients) do
+        -- prevent tsserver starting if volar is attached
+        if client_.name == "volar" then
+          client.stop()
+        end
+      end
     end
   end,
 })
