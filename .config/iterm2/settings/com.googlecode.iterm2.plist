@@ -811,7 +811,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>29.904288563829777</real>
+			<real>40.110056515957439</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1183,11 +1183,11 @@
 			<key>Normal Font</key>
 			<string>BlexMonoNFM 15</string>
 			<key>Option Key Sends</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
@@ -1229,7 +1229,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.19802692819148926</real>
+			<real>0.29802692819148935</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
