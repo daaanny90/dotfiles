@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # ALIAS
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dotfiles="yadm"
+alias df="yadm" # DotFiles
 alias reloadzsh="source ~/.zshrc"
 #   
 # export NVM_DIR="$HOME/.nvm"
