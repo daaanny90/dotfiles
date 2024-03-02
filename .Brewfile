@@ -153,6 +153,8 @@ cask "microsoft-teams"
 cask "obsidian"
 # Pomodoro timer
 cask "pomatez"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Block your own access to distracting websites
