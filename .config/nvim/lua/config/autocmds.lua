@@ -16,22 +16,30 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if not (args.data and args.data.client_id) then
       return
     end
+
     local active_clients = vim.lsp.get_active_clients()
     local client = vim.lsp.get_client_by_id(args.data.client_id)
+
     -- prevent eslint and volar competing
     if client.name == "volar" then
+      print("volar is already attached")
       for _, client_ in pairs(active_clients) do
         -- stop volar autoformat if eslint is already active
         if client_.name == "eslint" then
+          print("eslint found. stopping volar formatting")
           client.server_capabilities.documentFormattingProvider = false
         end
       end
-    -- prevent tsserver and volar competing
-    elseif client.name == "tsserver" then
-      for _, client_ in pairs(active_clients) do
-        -- prevent tsserver starting if volar is attached
-        if client_.name == "volar" then
-          client.stop()
+
+      -- prevent tsserver and volar to competing
+      if client.name == "tsserver" then
+        print("tsserver is already attached")
+        for _, client_ in pairs(active_clients) do
+          -- stop tsserver if volar is attached
+          if client_.name == "volar" then
+            print("volar found. stopping tsserver")
+            client.stop()
+          end
         end
       end
     end
