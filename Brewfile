@@ -5,6 +5,8 @@ tap "jesseduffield/lazygit"
 tap "tabbyml/tabby"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Manage multiple Node.js versions
@@ -15,6 +17,8 @@ brew "ripgrep"
 brew "speedtest-cli"
 # Terminal multiplexer
 brew "tmux"
+# Plugin manager for tmux
+brew "tpm"
 # Yet Another Dotfiles Manager
 brew "yadm"
 # Fish shell like syntax highlighting for zsh
@@ -131,6 +135,8 @@ cask "font-plemol-jp-hs"
 cask "font-plemol-jp-nf"
 # Developer targeted fonts with a high number of glyphs
 cask "font-victor-mono-nerd-font"
+# Web browser
+cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Keyboard customiser
@@ -141,6 +147,12 @@ cask "microsoft-auto-update"
 cask "microsoft-outlook"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Pomodoro timer
+cask "pomatez"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Block your own access to distracting websites
@@ -153,8 +165,6 @@ cask "spotube"
 cask "ubersicht"
 # Open-source code editor
 cask "visual-studio-code"
-# Share, organise and collaborate on designs
-cask "zeplin"
 # Video communication and virtual meeting platform
 cask "zoom"
 vscode "alefragnani.bookmarks"
