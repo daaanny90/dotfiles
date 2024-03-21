@@ -1,10 +1,10 @@
 tap "homebrew-x/x"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "homebrew/core"
 tap "jesseduffield/lazygit"
 tap "tabbyml/tabby"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # GNU Pretty Good Privacy (PGP) package
@@ -137,12 +137,20 @@ cask "font-plemol-jp-hs"
 cask "font-plemol-jp-nf"
 # Developer targeted fonts with a high number of glyphs
 cask "font-victor-mono-nerd-font"
+# Free and open-source image editor
+cask "gimp"
 # Web browser
 cask "google-chrome"
+# Vector graphics editor
+cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Open-source screen recorder built with web technology
+cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
+# Markdown editor
+cask "mark-text"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Email client
@@ -167,6 +175,8 @@ cask "spotube"
 cask "ubersicht"
 # Open-source code editor
 cask "visual-studio-code"
+# Native desktop client for WhatsApp
+cask "whatsapp"
 # Video communication and virtual meeting platform
 cask "zoom"
 vscode "alefragnani.bookmarks"
@@ -189,6 +199,7 @@ vscode "devsense.phptools-vscode"
 vscode "devsense.profiler-php-vscode"
 vscode "dineug.vuerd-vscode"
 vscode "dustypomerleau.rust-syntax"
+vscode "eamodio.gitlens"
 vscode "ecmel.vscode-html-css"
 vscode "emanuelebartolesi.npm-info-lens"
 vscode "equinusocio.vsc-community-material-theme"

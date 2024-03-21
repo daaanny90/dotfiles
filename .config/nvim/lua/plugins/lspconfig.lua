@@ -2,7 +2,17 @@ return {
   "neovim/nvim-lspconfig",
   opts = {
     -- This configuration is added to use eslint as formatter on save. There where conflicts between eslint and formatter in herole project
-    servers = { eslint = {}, volar = {}, yamlls = {} },
+    servers = {
+      eslint = {},
+      volar = {
+        filetypes = {
+          "typescript",
+          "vue",
+        },
+      },
+      yamlls = {},
+      tsserver = {},
+    },
     setup = {
       eslint = function()
         require("lazyvim.util").lsp.on_attach(function(client)

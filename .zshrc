@@ -96,6 +96,17 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="yadm" # DotFiles
 alias reloadzsh="source ~/.zshrc"
+# alias toggledock = "defaults write com.apple.dock autohide true && killall Dock"
+# alias thisismyalias = "ls"
+
+
+# toggledock() {
+  # local autohide=$(!defaults read com.apple.dock autohide)
+  # echo "Autohide: ${autohide}"
+
+  # defaults write com.apple.dock autohide ${autohide}
+  # defaults write com.apple.dock autohide true
+# }
 
 # BREWW ALIAS
 # This alias give the functionality to update the brew file every time I run install or uninstall
