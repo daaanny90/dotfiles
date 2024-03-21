@@ -29,6 +29,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
           print("eslint found. stopping volar formatting")
           client.server_capabilities.documentFormattingProvider = false
         end
+
+        if client_.name == "tsserver" then
+          print("stopping tsserver while volar is attached")
+          client_.stop()
+        end
       end
 
       -- prevent tsserver and volar to competing
@@ -56,33 +61,16 @@ vim.api.nvim_create_autocmd("WinLeave", {
   end,
 })
 
--- manage display delay of recording macro in lualine
--- https://www.reddit.com/r/neovim/comments/xy0tu1/cmdheight0_recording_macros_message/
-vim.api.nvim_create_autocmd("RecordingEnter", {
-  callback = function()
-    require("lualine").refresh({
-      place = { "statusline" },
-    })
-  end,
-})
+-- Autoupdate plugins if needed
+local function augroup(name)
+  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+end
 
-vim.api.nvim_create_autocmd("RecordingLeave", {
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = augroup("autoupdate"),
   callback = function()
-    -- This is going to seem really weird!
-    -- Instead of just calling refresh we need to wait a moment because of the nature of
-    -- `vim.fn.reg_recording`. If we tell lualine to refresh right now it actually will
-    -- still show a recording occuring because `vim.fn.reg_recording` hasn't emptied yet.
-    -- So what we need to do is wait a tiny amount of time (in this instance 50 ms) to
-    -- ensure `vim.fn.reg_recording` is purged before asking lualine to refresh.
-    local timer = vim.loop.new_timer()
-    timer:start(
-      50,
-      0,
-      vim.schedule_wrap(function()
-        require("lualine").refresh({
-          place = { "statusline" },
-        })
-      end)
-    )
+    if require("lazy.status").has_updates then
+      require("lazy").update({ show = false })
+    end
   end,
 })

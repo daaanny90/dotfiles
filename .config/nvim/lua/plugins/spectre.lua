@@ -4,4 +4,7 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
+  opts = {
+    is_block_ui_break = true,
+  },
 }
