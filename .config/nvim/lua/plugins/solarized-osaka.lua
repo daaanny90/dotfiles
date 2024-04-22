@@ -1,3 +1,4 @@
+-- theme made by Takuya Matsuyama
 return {
   "craftzdog/solarized-osaka.nvim",
   lazy = false,

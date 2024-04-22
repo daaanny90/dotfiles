@@ -1,3 +1,4 @@
+-- customize the bottom bar
 local function get_codium_status()
   return "{…}" .. vim.fn["codeium#GetStatusString"]()
 end

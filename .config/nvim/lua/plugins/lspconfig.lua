@@ -1,3 +1,4 @@
+-- configuration for language servers
 return {
   "neovim/nvim-lspconfig",
   opts = {

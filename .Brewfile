@@ -5,8 +5,16 @@ tap "jesseduffield/lazygit"
 tap "tabbyml/tabby"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Dependency Manager for PHP
+brew "composer"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Assuan IPC Library
+brew "libassuan"
+# Passphrase entry dialog utilizing the Assuan protocol
+brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -35,6 +43,10 @@ cask "background-music"
 cask "bitwarden"
 # Utility that prevents the system from going to sleep
 cask "caffeine"
+# E-books management software
+cask "calibre"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker"
 # Collaborative team software
@@ -149,6 +161,8 @@ cask "iterm2"
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
+# Open-source Markdown editor
+cask "macdown"
 # Markdown editor
 cask "mark-text"
 # Provides updates to various Microsoft products
@@ -161,6 +175,8 @@ cask "microsoft-teams"
 cask "obsidian"
 # Pomodoro timer
 cask "pomatez"
+# VPN client focusing on security
+cask "protonvpn"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
@@ -244,7 +260,6 @@ vscode "vivaxy.vscode-conventional-commits"
 vscode "vscode-icons-team.vscode-icons"
 vscode "vscodevim.vim"
 vscode "vue.volar"
-vscode "vue.vscode-typescript-vue-plugin"
 vscode "wayou.vscode-icons-mac"
 vscode "wayou.vscode-todo-highlight"
 vscode "wordpresstoolbox.wordpress-toolbox"

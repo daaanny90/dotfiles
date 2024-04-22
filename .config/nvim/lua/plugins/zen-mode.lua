@@ -1,3 +1,4 @@
+-- zen mode to concentrate on content
 return {
   "folke/zen-mode.nvim",
   opts = {

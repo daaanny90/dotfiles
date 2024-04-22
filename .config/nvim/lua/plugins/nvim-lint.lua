@@ -1,3 +1,4 @@
+-- linting config inside neovim
 return {
   {
     "mfussenegger/nvim-lint",

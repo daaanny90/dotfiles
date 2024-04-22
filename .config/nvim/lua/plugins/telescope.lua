@@ -1,3 +1,4 @@
+-- find files everywhere
 return {
   "nvim-telescope/telescope.nvim",
   opts = {

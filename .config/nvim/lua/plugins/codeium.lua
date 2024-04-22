@@ -1,3 +1,4 @@
+-- codeium is a sort of copilot, but free
 return {
   "Exafunction/codeium.vim",
   event = "BufEnter",

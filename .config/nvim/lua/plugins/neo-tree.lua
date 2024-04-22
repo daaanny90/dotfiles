@@ -1,3 +1,4 @@
+-- navigation sidebar
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {

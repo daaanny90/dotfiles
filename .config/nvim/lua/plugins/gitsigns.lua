@@ -1,3 +1,4 @@
+-- inline git blame like in vscode
 return {
   {
     "lewis6991/gitsigns.nvim",

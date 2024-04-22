@@ -1,3 +1,4 @@
+-- well, the name says it all
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
