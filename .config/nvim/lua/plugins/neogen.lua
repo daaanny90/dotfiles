@@ -1,3 +1,4 @@
+-- generate jsdoc on a function
 return {
   "danymat/neogen",
   dependencies = "nvim-treesitter/nvim-treesitter",

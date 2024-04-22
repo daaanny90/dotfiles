@@ -1,3 +1,4 @@
+-- Default LazyVim theme made by Folke
 return {
   "folke/tokyonight.nvim",
   opts = {

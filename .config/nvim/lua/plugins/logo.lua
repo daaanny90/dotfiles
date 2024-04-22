@@ -1,3 +1,4 @@
+-- it replace the lazyvim logo
 return {
   "nvimdev/dashboard-nvim",
   event = "VimEnter",
