@@ -22,12 +22,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- test to always stop tsserver. if it works, must be packed in a neovimrc to
     -- handle this case only for herole projects with vue (or general vue projects)
-    for _, client_ in pairs(active_clients) do
-      if client_.name == "tsserver" then
-        print("stop tsserver")
-        client_.stop()
-      end
-    end
+    -- for _, client_ in pairs(active_clients) do
+    --   if client_.name == "tsserver" then
+    --     print("stop tsserver")
+    --     client_.stop()
+    --   end
+    -- end
 
     -- prevent eslint and volar competing
     if client.name == "volar" then
@@ -83,3 +83,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+vim.keymap.set("n", "<leader>O", "<Plug>GenerateDiagram")
