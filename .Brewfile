@@ -173,8 +173,6 @@ cask "microsoft-outlook"
 cask "microsoft-teams"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Pomodoro timer
-cask "pomatez"
 # VPN client focusing on security
 cask "protonvpn"
 # Control your tools with a few keystrokes
