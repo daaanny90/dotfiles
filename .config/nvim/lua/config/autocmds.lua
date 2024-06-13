@@ -22,12 +22,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- test to always stop tsserver. if it works, must be packed in a neovimrc to
     -- handle this case only for herole projects with vue (or general vue projects)
-    -- for _, client_ in pairs(active_clients) do
-    --   if client_.name == "tsserver" then
-    --     print("stop tsserver")
-    --     client_.stop()
-    --   end
-    -- end
+    for _, client_ in pairs(active_clients) do
+      if client_.name == "tsserver" then
+        print("stop tsserver")
+        client_.stop()
+      end
+    end
 
     -- prevent eslint and volar competing
     if client.name == "volar" then
@@ -39,23 +39,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
           client.server_capabilities.documentFormattingProvider = false
         end
 
-        -- if client_.name == "tsserver" then
-        --   print("stopping tsserver while volar is attached")
-        --   client_.stop()
-        -- end
+        if client_.name == "tsserver" then
+          print("stopping tsserver while volar is attached")
+          client_.stop()
+        end
       end
 
       -- prevent tsserver and volar to competing
-      -- if client.name == "tsserver" then
-      --   print("tsserver is already attached")
-      --   for _, client_ in pairs(active_clients) do
-      --     -- stop tsserver if volar is attached
-      --     if client_.name == "volar" then
-      --       print("volar found. stopping tsserver")
-      --       client.stop()
-      --     end
-      --   end
-      -- end
+      if client.name == "tsserver" then
+        print("tsserver is already attached")
+        for _, client_ in pairs(active_clients) do
+          -- stop tsserver if volar is attached
+          if client_.name == "volar" then
+            print("volar found. stopping tsserver")
+            client.stop()
+          end
+        end
+      end
     end
   end,
 })
