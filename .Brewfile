@@ -1,3 +1,4 @@
+tap "epk/epk"
 tap "homebrew-x/x"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -53,101 +54,54 @@ cask "docker"
 cask "figma"
 # Web browser
 cask "firefox"
-# Developer targeted fonts with a high number of glyphs
 cask "font-0xproto-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-3270-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-agave-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-anonymice-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-arimo-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-aurulent-sans-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-bigblue-terminal-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-bitstream-vera-sans-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-blex-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-caskaydia-cove-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-caskaydia-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-code-new-roman-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-comic-shanns-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-commit-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-cousine-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-d2coding-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-daddy-time-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-dejavu-sans-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-droid-sans-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-envy-code-r-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fantasque-sans-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-geist-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-go-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-gohufont-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-hasklug-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-heavy-data-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-hurmit-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-im-writing-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-inconsolata-go-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-inconsolata-lgc-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-inconsolata-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-intone-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-iosevka-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-iosevka-term-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-iosevka-term-slab-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-lekton-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-liberation-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-lilex-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-martian-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
-# Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
 cask "font-plemol-jp"
-# Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
 cask "font-plemol-jp-hs"
-# Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
 cask "font-plemol-jp-nf"
-# Developer targeted fonts with a high number of glyphs
+cask "font-sf-mono-nerd-font"
 cask "font-victor-mono-nerd-font"
 # Free and open-source image editor
 cask "gimp"
@@ -171,8 +125,14 @@ cask "microsoft-auto-update"
 cask "microsoft-outlook"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# App to write, plan, collaborate, and get organised
+cask "notion"
+# Calendar for professionals and teams
+cask "notion-calendar"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Collaboration platform for API development
+cask "postman"
 # VPN client focusing on security
 cask "protonvpn"
 # Control your tools with a few keystrokes
@@ -206,6 +166,7 @@ vscode "calebporzio.better-phpunit"
 vscode "catppuccin.catppuccin-vsc"
 vscode "christian-kohler.npm-intellisense"
 vscode "christian-kohler.path-intellisense"
+vscode "codeium.codeium"
 vscode "csstools.postcss"
 vscode "dbaeumer.vscode-eslint"
 vscode "devsense.composer-php-vscode"
@@ -236,11 +197,11 @@ vscode "mateocerquetella.xcode-12-theme"
 vscode "mhutchie.git-graph"
 vscode "michelemelluso.gitignore"
 vscode "mksafi.find-jump"
+vscode "mrmlnc.vscode-scss"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-playwright.playwright"
 vscode "ms-vscode.makefile-tools"
 vscode "ms-vscode.test-adapter-converter"
-vscode "ms-vscode.vscode-typescript-next"
 vscode "mtxr.sqltools"
 vscode "mtxr.sqltools-driver-mysql"
 vscode "natizyskunk.sftp"
@@ -251,9 +212,11 @@ vscode "rapidapi.vscode-services"
 vscode "redhat.vscode-yaml"
 vscode "ritwickdey.liveserver"
 vscode "runem.lit-plugin"
+vscode "sibiraj-s.vscode-scss-formatter"
 vscode "stylelint.vscode-stylelint"
 vscode "svelte.svelte-vscode"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "vitest.explorer"
 vscode "vivaxy.vscode-conventional-commits"
 vscode "vscode-icons-team.vscode-icons"
 vscode "vscodevim.vim"
@@ -262,5 +225,6 @@ vscode "wayou.vscode-icons-mac"
 vscode "wayou.vscode-todo-highlight"
 vscode "wordpresstoolbox.wordpress-toolbox"
 vscode "xdebug.php-pack"
+vscode "yoavbls.pretty-ts-errors"
 vscode "zhuangtongfa.material-theme"
 vscode "zobo.php-intellisense"
