@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# export TERM="xterm-256color"
+[[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,7 +99,8 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="yadm" # DotFiles
 alias reloadzsh="source ~/.zshrc"
 alias cw="~/.config/cliclockwork/cliclockwork.mjs"
-
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+alias gondor="ssh danny@192.168.178.245"
 
 # BREWW ALIAS
 # This alias give the functionality to update the brew file every time I run install or uninstall

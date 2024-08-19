@@ -1,9 +1,0 @@
-{
-  "highlight element": {
-    "prefix": "test",
-    "body": [
-      "background: rgba(255, 0, 0, .5);",
-      "border: 1px solid red;"
-    ]
-  }
-}
