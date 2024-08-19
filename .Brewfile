@@ -6,8 +6,12 @@ tap "jesseduffield/lazygit"
 tap "tabbyml/tabby"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# General-purpose scripting language
+brew "php"
 # Dependency Manager for PHP
 brew "composer"
+# Command-line outline and bitmap font editor/converter
+brew "fontforge"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # GNU Transport Layer Security (TLS) Library
@@ -30,13 +34,15 @@ brew "speedtest-cli"
 brew "tmux"
 # Plugin manager for tmux
 brew "tpm"
+# Watch files and take action when they change
+brew "watchman"
 # Yet Another Dotfiles Manager
 brew "yadm"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
-# Tabby: AI Coding Assitatnt
+# Tabby: AI Coding Assistant
 brew "tabbyml/tabby/tabby"
 # Audio utility
 cask "background-music"
@@ -50,6 +56,8 @@ cask "calibre"
 cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker"
+# Notification Center widget and menu bar application to monitor fans
+cask "fanny"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -101,7 +109,6 @@ cask "font-meslo-lg-nerd-font"
 cask "font-plemol-jp"
 cask "font-plemol-jp-hs"
 cask "font-plemol-jp-nf"
-cask "font-sf-mono-nerd-font"
 cask "font-victor-mono-nerd-font"
 # Free and open-source image editor
 cask "gimp"
@@ -115,6 +122,8 @@ cask "iterm2"
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
+# GPU-based terminal emulator
+cask "kitty"
 # Open-source Markdown editor
 cask "macdown"
 # Markdown editor
@@ -129,8 +138,12 @@ cask "microsoft-teams"
 cask "notion"
 # Calendar for professionals and teams
 cask "notion-calendar"
+# Open-source software for live streaming and screen recording
+cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# HTTP client that helps testing and describing APIs
+cask "paw"
 # Collaboration platform for API development
 cask "postman"
 # VPN client focusing on security
@@ -145,12 +158,16 @@ cask "selfcontrol"
 cask "signal"
 # Open source Spotify client
 cask "spotube"
+# To-do list
+cask "todoist"
 # Run commands and display their output on the desktop
 cask "ubersicht"
 # Open-source code editor
 cask "visual-studio-code"
 # Native desktop client for WhatsApp
 cask "whatsapp"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 vscode "alefragnani.bookmarks"

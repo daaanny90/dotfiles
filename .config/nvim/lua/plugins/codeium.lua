@@ -1,12 +1,23 @@
--- codeium is a sort of copilot, but free
 return {
-  "Exafunction/codeium.vim",
-  event = "BufEnter",
+  'Exafunction/codeium.vim',
+  event = 'BufEnter',
   config = function()
-    -- Change '<C-g>' here to any keycode you like.
-    vim.g.codeium_no_map_tab = 1
-    vim.keymap.set("i", "<M-Tab>", function()
-      return vim.fn["codeium#Accept"]()
+    vim.g.codeium_manual = true
+
+    vim.keymap.set('i', '<M-TAB>', function()
+      return vim.fn['codeium#Accept']()
+    end, { expr = true, silent = true })
+
+    vim.keymap.set('i', '<M-;>', function()
+      return vim.fn['codeium#CycleOrComplete']()
+    end, { expr = true, silent = true })
+
+    vim.keymap.set('i', '<M-]>', function()
+      return vim.fn['codeium#CycleCompletions'](1)
+    end, { expr = true, silent = true })
+
+    vim.keymap.set('i', '<M-c>', function()
+      return vim.fn['codeium#Clear']()
     end, { expr = true, silent = true })
   end,
 }

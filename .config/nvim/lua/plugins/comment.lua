@@ -1,5 +1,2 @@
--- plugin to comment multiple lines of code
-return {
-  "numToStr/comment.nvim",
-  lazy = false,
-}
+return -- "gc" to comment visual regions/lines
+{ 'numToStr/Comment.nvim', opts = {} }
