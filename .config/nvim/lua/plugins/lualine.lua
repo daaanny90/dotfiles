@@ -18,6 +18,15 @@ local function current_working_dir()
   return '~' .. cwd
 end
 
+local function show_macro_recording()
+  local recording_register = vim.fn.reg_recording()
+  if recording_register == '' then
+    return ''
+  else
+    return 'Recording @' .. recording_register
+  end
+end
+
 return {
   'nvim-lualine/lualine.nvim',
   event = 'VeryLazy',
@@ -63,7 +72,13 @@ return {
           { 'filename', path = 1, symbols = { modified = '[]', readonly = ' ' } },
           { 'lsp_progress', display_components = { 'lsp_client_name' } },
         },
-        lualine_x = { { 'filetype', icon_only = true } },
+        lualine_x = {
+          {
+            'macro-recording',
+            fmt = show_macro_recording,
+          },
+          { 'filetype', icon_only = true },
+        },
         lualine_y = {
           { 'progress', separator = ' ', padding = { left = 1, right = 0 } },
           { current_working_dir },

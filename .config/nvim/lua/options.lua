@@ -37,3 +37,6 @@ vim.opt.undolevels = 10000
 
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us', 'de_de' }
+
+-- do not show the tilde for blank lines
+vim.opt.fillchars = 'eob: '
