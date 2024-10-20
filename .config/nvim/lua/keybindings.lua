@@ -5,6 +5,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear on pressing <Esc>
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+local ts_error_formatter = require 'plugins.my-plugins.ts-error-formatter.ts-error-formatter'
 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Show [D]iagnostic error messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -46,4 +47,3 @@ local opts = { noremap = true, silent = true, desc = 'Generate function [D]ocume
 vim.api.nvim_set_keymap('n', '<Leader>cD', ":lua require('neogen').generate()<CR>", opts)
 
 -- http client kulala keybindings
-
