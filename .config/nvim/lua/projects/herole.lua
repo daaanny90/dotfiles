@@ -18,7 +18,7 @@ require('lspconfig').volar.setup {
 }
 
 -- LSP - TSSERVER
-require('lspconfig').tsserver.setup {
+require('lspconfig').ts_ls.setup {
   init_options = {
     plugins = {
       {
@@ -40,7 +40,19 @@ require('lspconfig').tsserver.setup {
   single_file_support = false,
 }
 
+-- EslintFixAll on save through eslint_d and conform stopped working for now reason
+-- this fixes the problem. Configuration in conform is still on autosave = true
+-- let's see if this can create problems in future
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.tsx', '*.ts', '*.jsx', '*.js', '*.vue' },
+  command = 'silent! EslintFixAll',
+  group = vim.api.nvim_create_augroup('MyAutocmdsJavaScripFormatting', {}),
+})
+
 -- DAP - PHP XDEBUG
+-- FIXME: not working at all. Server goes up but debug breakpoints don't work
+-- probably the problem is that the backend is running in a docker container, but the
+-- pathMapping did not work as expected 🤷
 local dap = require 'dap'
 dap.adapters.php = {
   type = 'executable',
@@ -54,5 +66,12 @@ dap.configurations.php = {
     request = 'launch',
     name = 'Listen for Xdebug',
     port = 9003,
+    pathMappings = {
+      ['/var/www/html'] = '${workspaceFolder}/website',
+    },
   },
 }
+
+-- VIM TEST
+-- somehow vim test do not recognize vitest out of the box. This fix the problem
+vim.g['test#javascript#runner'] = 'vitest'
