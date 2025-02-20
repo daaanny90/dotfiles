@@ -99,8 +99,16 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="yadm" # DotFiles
 alias reloadzsh="source ~/.zshrc"
 alias cw="~/.config/cliclockwork/cliclockwork.mjs"
-alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 alias gondor="ssh danny@192.168.178.245"
+alias pcc="pnpm run test:unit && pnpm run type-check && pnpm run lint"
+# alias clean-branches="git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done" # this removes all the local branches that have no upstream branch on remote
+clean-branches() {
+  git fetch -p
+  for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}')
+  do
+    git branch -D "$branch"
+  done
+}
 
 # BREWW ALIAS
 # This alias give the functionality to update the brew file every time I run install or uninstall
