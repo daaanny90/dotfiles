@@ -1,0 +1,12 @@
+=== SonicWall UI Dump Thursday, 19. February 2026 at 16:06:05 ===
+
+Finestre: 1
+
+--- Window 1: SonicWall Mobile Connect ---
+
+  Pulsanti (window): 3
+    [button] name="missing value" description="" roleDesc="close button"
+    [button] name="missing value" description="" roleDesc="zoom button"
+    [button] name="missing value" description="" roleDesc="minimize button"
+
+

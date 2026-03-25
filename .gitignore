@@ -1,1 +1,30 @@
-./config/nvim/**/*
+# Secrets
+.secrets
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+package-lock.json
+
+# Raycast extensions (managed by Raycast, not dotfiles)
+.config/raycast/extensions/
+
+# Karabiner automatic backups
+.config/karabiner/automatic_backups/
+
+# Generated/cached files
+.config/configstore/
+.config/github-copilot/
+.config/nx/
+
+# Editor databases/caches
+.config/zed/prompts/
+.config/nvim.bak
+
+# GTK generated
+.config/gtk-2.0/
+
+# DNS66 (Android app config, not relevant)
+.config/dns66/

@@ -1,10 +1,26 @@
+
+# Not nice but I somehow can't find what is setting NODE_ENV to production. The only thing I know is that when I start the shell, the NODE_ENV is already
+# set to production, so is something that starts before. The only workaround I can think of is to set the NODE_ENV to development here at the beginning
+# of my .zshrc.
+NODE_ENV=development
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Load secrets (API keys, tokens) from separate file
+[ -f ~/.secrets ] && source ~/.secrets
+
+# Enable UTF-8 support for proper unicode/Nerd Font rendering
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Set TERM outside tmux (iTerm2 usually sets this automatically)
 # export TERM="xterm-256color"
-[[ -n $TMUX ]] && export TERM="screen-256color"
+
+# Don't override TERM inside tmux - let tmux handle it
+# [[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -40,7 +56,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
  ENABLE_CORRECTION="true"
@@ -76,8 +92,6 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -94,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ALIAS
+alias update-docker="brew upgrade --cask docker"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="yadm" # DotFiles
@@ -101,6 +116,7 @@ alias reloadzsh="source ~/.zshrc"
 alias cw="~/.config/cliclockwork/cliclockwork.mjs"
 alias gondor="ssh danny@192.168.178.245"
 alias pcc="pnpm run test:unit && pnpm run type-check && pnpm run lint"
+alias resetconfig='find . -type f -name "*_default.ini" -exec bash -c '\''cp "$0" "${0/_default/}"'\'' {} \; && find . -type f -name "*.php.dist" -exec bash -c '\''cp "$0" "${0/.dist/}"'\'' {} \;'
 # alias clean-branches="git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done" # this removes all the local branches that have no upstream branch on remote
 clean-branches() {
   git fetch -p
@@ -110,6 +126,27 @@ clean-branches() {
   done
 }
 
+mkastro() {
+  if [ -z "$1" ]; then
+    echo "Errore: devi specificare un nome per la cartella."
+    return 1
+  fi
+
+  mkdir -p "$1" && cat <<EOF > "$1/index.astro"
+---
+---
+
+<div>
+  <h1>$1</h1>
+</div>
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "Cartella '$1' creata con successo con index.astro!"
+  else
+    echo "Errore durante la creazione della cartella o del file."
+  fi
+}
 # BREWW ALIAS
 # This alias give the functionality to update the brew file every time I run install or uninstall
 # https://github.com/Homebrew/brew/issues/3933#issuecomment-373771217
@@ -137,10 +174,16 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 
-# pnpm
-export PNPM_HOME="/Users/dasp/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/dasp/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(mise activate zsh)"
+
+# Process info: procinfo [PID] — top CPU, pstree; con PID: catena padri, sample, lsof
+[[ -f ~/.config/shell/procinfo.zsh ]] && source ~/.config/shell/procinfo.zsh
