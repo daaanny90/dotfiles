@@ -7,7 +7,158 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "theme": "Rosé Pine Moon",
-  "ui_font_size": 16,
-  "buffer_font_size": 16
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "ollama": {
+      "prompt_format": "qwen",
+      "model": "qwen2.5-coder:7b",
+    },
+    "provider": "zed",
+  },
+  "proxy": "",
+  "autosave": "on_focus_change",
+  "context_servers": {
+    "mcp-server-gitlab": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "gitlab_personal_access_token": "glpat-nAbqz8QxYwQvoNidKeOx9G86MQp1OjE1CA.01.0y1bny5ks",
+        "gitlab_api_url": "https://gitlab.herole.de/api/v4",
+      },
+    },
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "vtsls": {
+          "tsserver": {
+            "globalPlugins": [
+              {
+                "name": "@vue/typescript-plugin",
+                "location": "/Users/dasp/Library/Application Support/Zed/extensions/work/vue/node_modules/@vue/language-server",
+                "languages": ["vue.js", "typescript"],
+                "configNamespace": "typescript",
+                "enableForWorkspaceTypeScriptVersions": true,
+              },
+            ],
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+    "vue-language-server": {
+      "initialization_options": {
+        "vue": { "hybridMode": true },
+      },
+    },
+  },
+  "git_panel": {
+    "tree_view": true,
+  },
+  "terminal": {
+    "dock": "left",
+  },
+  "agent": {
+    "expand_terminal_card": false,
+    "thinking_display": "always_collapsed",
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "enable_thinking": false,
+    },
+    "default_model": {
+      "provider": "ollama",
+      "model": "qwen2.5-coder:7b",
+      "enable_thinking": false,
+    },
+    "favorite_models": [
+      {
+        "provider": "ollama",
+        "model": "qwen2.5-coder:7b",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-8",
+        "enable_thinking": true,
+        "effort": "max",
+      },
+    ],
+    "model_parameters": [],
+  },
+  "agent_ui_font_size": 14.0,
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "diff_view_style": "split",
+  "agent_servers": {
+    "mistral-vibe": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "bypassPermissions",
+        "model": "opus[1m]",
+        "effort": "max",
+      },
+      "type": "registry",
+    },
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "vim_mode": true,
+  "theme": "Graph Paper Oscilloscope",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 12.0,
+
+  // --- Neovim-like editing experience ---
+  "relative_line_numbers": "enabled",
+  "vertical_scroll_margin": 10,
+  "tab_size": 2,
+  "hard_tabs": false,
+  "format_on_save": "on",
+  "show_whitespaces": "all",
+  "cursor_blink": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_smartcase_find": true,
+    "highlight_on_yank_duration": 150,
+  },
+  "languages": {
+    "Vue.js": {
+      "language_servers": ["...", "vtsls"],
+    },
+    "YAML": {
+      "format_on_save": "off",
+    },
+  },
+
+  // AI settings to use local models for small tasks withotu freezing the laptop every prompt
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "auto_discover": false,
+      "available_models": [
+        {
+          "name": "qwen2.5-coder:7b",
+          "display_name": "qwen2.5-coder:7b-local",
+          "max_tokens": 8192,
+          "supports_tools": false,
+        },
+      ],
+    },
+  },
 }
