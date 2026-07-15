@@ -23,6 +23,9 @@ package-lock.json
 .config/zed/prompts/
 .config/nvim.bak
 
+# iTerm2 plist churns on every run — config via manual export when needed
+.config/iterm2/settings/com.googlecode.iterm2.plist
+
 # GTK generated
 .config/gtk-2.0/
 

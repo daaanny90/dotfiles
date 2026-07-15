@@ -71,3 +71,19 @@ if [ "$system_type" = "Darwin" ]; then
 	configure_mac_settings
 	configure_iterm
 fi
+
+# install oh-my-zsh if missing (untracked framework, reinstalled here)
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+	echo "Installing oh-my-zsh..."
+	git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh"
+fi
+
+# install tpm (tmux plugin manager); plugins install inside tmux with prefix+I
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+	echo "Installing tpm..."
+	git clone --depth=1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+fi
+
+# init real submodules (nvim, cliclockwork)
+echo "Initializing submodules..."
+yadm submodule update --init --recursive
