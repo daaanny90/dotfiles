@@ -16,8 +16,9 @@
 # source-file ~/.config/tmux/themes/zed-one-dark.tmux
 # source-file ~/.config/tmux/themes/zed-ayu-mirage.tmux
 # source-file ~/.config/tmux/themes/zed-graph-paper.tmux
-source-file ~/.config/tmux/themes/zed-oscilloscope.tmux
+# source-file ~/.config/tmux/themes/zed-oscilloscope.tmux
 # source-file ~/.config/tmux/themes/zed-blueprint.tmux
+source-file ~/.config/tmux/themes/zed-macos-classic-dark.tmux
 
 # iTERM2 MUTED (matches Neovim iterm2-dark-background)
 # source-file ~/.config/tmux/themes/iterm2-muted.tmux
