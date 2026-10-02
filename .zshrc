@@ -115,6 +115,7 @@ alias df="yadm" # DotFiles
 alias reloadzsh="source ~/.zshrc"
 alias cw="~/.config/cliclockwork/cliclockwork.mjs"
 alias gondor="ssh danny@192.168.178.245"
+alias kindle-import="~/zettelkasten/tools/kindle-import.py" # evidenziazioni Kindle -> 0-inbox
 alias pcc="pnpm run test:unit && pnpm run type-check && pnpm run lint"
 alias resetconfig='find . -type f -name "*_default.ini" -exec bash -c '\''cp "$0" "${0/_default/}"'\'' {} \; && find . -type f -name "*.php.dist" -exec bash -c '\''cp "$0" "${0/.dist/}"'\'' {} \;'
 # alias clean-branches="git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done" # this removes all the local branches that have no upstream branch on remote
