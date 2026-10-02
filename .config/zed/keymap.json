@@ -1,0 +1,102 @@
+// Zed keymap — Neovim/LazyVim-style bindings (leader = space)
+// Verified against Zed 1.6.3. Cross-check with "zed: open default keymap" after upgrades.
+[
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      // files / explorer / search
+      "space space": "file_finder::Toggle",
+      "space e": "project_panel::ToggleFocus",
+      "\\": "pane::RevealInProjectPanel",
+      "space s g": "pane::DeploySearch",
+      "space s r": "pane::DeploySearch",
+      "space /": "buffer_search::Deploy",
+      "space s d": "diagnostics::Deploy",
+      "space d s": "outline::Toggle",
+      "space w s": "project_symbols::Toggle",
+
+      // LSP
+      "g d": "editor::GoToDefinition",
+      "g shift-d": "editor::GoToDeclaration",
+      "g r": "editor::FindAllReferences",
+      "g shift-i": "editor::GoToImplementation",
+      "shift-k": "editor::Hover",
+      "space shift-d": "editor::GoToTypeDefinition",
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      "space t h": "editor::ToggleInlayHints",
+
+      // diagnostics / git hunks
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] d": "editor::GoToDiagnostic",
+      "[ c": "editor::GoToPreviousHunk",
+      "] c": "editor::GoToHunk",
+      "space h b": "editor::ToggleGitBlameInline",
+      "space h s": "git::ToggleStaged",
+      "space g g": "git_panel::ToggleFocus",
+
+      // buffers / tabs
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "[ b": "pane::ActivatePreviousItem",
+      "] b": "pane::ActivateNextItem",
+      "space b b": "tab_switcher::Toggle",
+      "space b d": "pane::CloseActiveItem",
+
+      // format / terminal / save / agent
+      "space f": "editor::Format",
+      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "ctrl-s": "workspace::Save",
+      "space a a": "agent::ToggleFocus",
+
+      // window (pane) navigation — like <C-w> h/j/k/l
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+
+      // multi-cursor
+      "ctrl-down": "editor::AddSelectionBelow",
+      "ctrl-up": "editor::AddSelectionAbove",
+
+      // test (vitest) + debug — gutter ▶ runs nearest test; these mirror vim-test/DAP
+      "space t r": "task::Rerun",
+      "space t t": "task::Spawn",
+      "space t c": ["task::Spawn", { "task_name": "checks (pcc)" }],
+      "space t d": ["task::Spawn", { "task_name": "dev server" }],
+      "space t s": ["task::Spawn", { "task_name": "storybook" }],
+      "space d b": "editor::ToggleBreakpoint",
+      "space d c": "debugger::Continue",
+
+      // flash-like jump: labels all words on screen, type the label to jump
+      // (overrides vim `s` = substitute; use `cl` instead)
+      "s": "vim::HelixJumpToWord"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+      "space f": "editor::Format",
+      "space a s": "agent::AddSelectionToThread"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "f5": "debugger::Start",
+      "f9": "editor::ToggleBreakpoint",
+      "f10": "debugger::StepOver",
+      "f11": "debugger::StepInto",
+      "shift-f11": "debugger::StepOut"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "k j": ["workspace::SendKeystrokes", "escape"],
+      "ctrl-s": "workspace::Save"
+    }
+  }
+]
