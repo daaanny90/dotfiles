@@ -71,8 +71,6 @@ brew "neovim"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
-# Create, run, and share large language models (LLMs)
-brew "ollama"
 # General-purpose scripting language
 brew "php@8.2", restart_service: :changed
 # PHP Static Analysis Tool

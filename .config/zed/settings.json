@@ -9,10 +9,6 @@
 {
   "edit_predictions": {
     "allow_data_collection": "no",
-    "ollama": {
-      "prompt_format": "qwen",
-      "model": "qwen2.5-coder:7b",
-    },
     "provider": "zed",
   },
   "proxy": "",
@@ -77,16 +73,12 @@
       "enable_thinking": false,
     },
     "default_model": {
-      "provider": "ollama",
-      "model": "qwen2.5-coder:7b",
-      "enable_thinking": false,
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "enable_thinking": true,
+      "effort": "max",
     },
     "favorite_models": [
-      {
-        "provider": "ollama",
-        "model": "qwen2.5-coder:7b",
-        "enable_thinking": false,
-      },
       {
         "provider": "anthropic",
         "model": "claude-opus-4-8",
@@ -151,22 +143,6 @@
     },
     "YAML": {
       "format_on_save": "off",
-    },
-  },
-
-  // AI settings to use local models for small tasks withotu freezing the laptop every prompt
-  "language_models": {
-    "ollama": {
-      "api_url": "http://localhost:11434",
-      "auto_discover": false,
-      "available_models": [
-        {
-          "name": "qwen2.5-coder:7b",
-          "display_name": "qwen2.5-coder:7b-local",
-          "max_tokens": 8192,
-          "supports_tools": false,
-        },
-      ],
     },
   },
 }
