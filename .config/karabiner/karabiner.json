@@ -49623,6 +49623,32 @@
                         "product_id": 45926,
                         "vendor_id": 1133
                     }
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 12885,
+                        "vendor_id": 6645
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "non_us_backslash" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 12870,
+                        "vendor_id": 6645
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "non_us_backslash" }]
+                        }
+                    ]
                 }
             ],
             "name": "Default profile",
