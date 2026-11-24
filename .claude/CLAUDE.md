@@ -10,7 +10,7 @@ Per esplorazione codebase, lettura file, pattern matching, ricerca di import/usi
 
 ## Dotfiles
 - Gestiti con **yadm** (non è un repo git in `~`). Configurazioni sotto `~/.config/`.
-- Neovim: LazyVim in `~/.config/nvim/`, con `lua/colorscheme-choice.lua` come selettore di colorscheme.
+- Neovim: config derivata da kickstart.nvim (non LazyVim) in `~/.config/nvim/`, repo git proprio e submodule di yadm, con `lua/colorscheme-choice.lua` come selettore di colorscheme.
 - Tmux: `~/.tmux.conf` + `~/.config/tmux/`, con `theme-choice.tmux` come selettore di tema.
 
 ## Cambio tema (tmux + nvim + Ghostty)
