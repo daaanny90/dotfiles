@@ -114,6 +114,14 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="yadm" # DotFiles
 alias reloadzsh="source ~/.zshrc"
 alias cw="~/.config/cliclockwork/cliclockwork.mjs"
+# notes: markdown profile (~/.config/notes) in its own Ghostty window
+function notes() {
+  open -na Ghostty.app --args \
+    --config-default-files=false \
+    --config-file="$HOME/.config/ghostty/notes.conf" \
+    --working-directory="$PWD" \
+    -e /usr/bin/env NVIM_APPNAME=notes /opt/homebrew/bin/nvim "$@"
+}
 alias gondor="ssh danny@192.168.178.245"
 alias kindle-import="~/zettelkasten/tools/kindle-import.py" # evidenziazioni Kindle -> 0-inbox
 alias pcc="pnpm run test:unit && pnpm run type-check && pnpm run lint"
