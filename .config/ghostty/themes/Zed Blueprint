@@ -1,0 +1,23 @@
+# Converted from Zed Blueprint.itermcolors
+palette = 0=#212b36
+palette = 1=#d97a6f
+palette = 2=#9cc9b0
+palette = 3=#d9bd7a
+palette = 4=#85b8d9
+palette = 5=#b39ac4
+palette = 6=#8fc4c9
+palette = 7=#c3cfda
+palette = 8=#647486
+palette = 9=#e59183
+palette = 10=#b3dac4
+palette = 11=#e6cd8f
+palette = 12=#9cc9e6
+palette = 13=#c7b0d6
+palette = 14=#a6d8dc
+palette = 15=#e8edf2
+background = #212b36
+foreground = #c3cfda
+cursor-color = #85b8d9
+cursor-text = #212b36
+selection-background = #354757
+selection-foreground = #e8edf2

@@ -1,0 +1,43 @@
+# Ghostty main config, ported from the iTerm2 "neovim" profile.
+# The `notes` window ignores this file (it loads only notes.conf).
+
+# Font (iTerm: BlexMono Nerd Font Mono 14, spacing 1.05 x 1.1; Ghostty needs 15 to match its glyph size)
+font-family = BlexMono Nerd Font Mono
+font-size = 15
+adjust-cell-width = 5%
+adjust-cell-height = 10%
+# Slightly thicker strokes, closer to iTerm's text weight
+font-thicken = true
+font-thicken-strength = 255
+
+# Colors: pick the theme in theme-choice (themes converted from ~/.config/iterm2/*.itermcolors)
+config-file = theme-choice
+
+# Window (iTerm: ~20% transparency with blur, minimal tabs, hidden scrollbar)
+background-opacity = 0.8
+background-blur = 25
+macos-titlebar-style = tabs
+scrollbar = never
+
+# Cursor (iTerm: blinking underline); no-cursor keeps the prompt from forcing a bar.
+# ssh-env sends TERM=xterm-256color over ssh (hosts like gondor lack xterm-ghostty).
+cursor-style = bar
+cursor-style-blink = true
+shell-integration-features = no-cursor,ssh-env
+
+# Keyboard (iTerm: Option sends Esc+ on both sides)
+macos-option-as-alt = true
+keybind = alt+backspace=text:\x17
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+
+# Quick terminal on opt+Space (replaces iTerm's Hotkey Window), hides on focus loss.
+# Centered with a fixed size: full-width top placement overflowed on the ultrawide + 27".
+# Center on a landscape screen: height first, then width. Position needs a full Ghostty restart.
+# global: needs Accessibility permission.
+keybind = global:alt+space=toggle_quick_terminal
+quick-terminal-position = center
+quick-terminal-size = 60%,50%
+
+# Clipboard (iTerm: apps may access the clipboard)
+clipboard-read = allow

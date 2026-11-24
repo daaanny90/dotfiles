@@ -13,11 +13,12 @@ Per esplorazione codebase, lettura file, pattern matching, ricerca di import/usi
 - Neovim: LazyVim in `~/.config/nvim/`, con `lua/colorscheme-choice.lua` come selettore di colorscheme.
 - Tmux: `~/.tmux.conf` + `~/.config/tmux/`, con `theme-choice.tmux` come selettore di tema.
 
-## Cambio tema (tmux + nvim)
-Entrambi i selettori hanno un elenco di righe tutte commentate tranne UNA (quella attiva). Per cambiare tema:
+## Cambio tema (tmux + nvim + Ghostty)
+I selettori hanno un elenco di righe tutte commentate tranne UNA (quella attiva). Per cambiare tema:
 1. In `~/.config/tmux/theme-choice.tmux`: commenta la riga `source-file ...` attuale, decommenta quella desiderata.
 2. In `~/.config/nvim/lua/colorscheme-choice.lua`: commenta la riga `vim.cmd.colorscheme(...)` attuale, decommenta quella desiderata.
 3. Ricarica tmux: `tmux source-file ~/.tmux.conf`.
+4. In `~/.config/ghostty/theme-choice`: commenta la riga `theme = ...` attuale, decommenta quella con lo stesso tema (es. `Zed One Dark` ↔ `zed-one-dark`). Si ricarica con cmd+shift+, in Ghostty.
 
 Coppie di temi consigliate (tmux ↔ nvim):
 - `iterm2-muted` ↔ `iterm2-dark-background`

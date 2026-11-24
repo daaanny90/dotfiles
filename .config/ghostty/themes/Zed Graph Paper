@@ -1,0 +1,23 @@
+# Converted from Zed Graph Paper.itermcolors
+palette = 0=#2a2a24
+palette = 1=#cf5f4a
+palette = 2=#a4b17c
+palette = 3=#d2a24c
+palette = 4=#7e99a3
+palette = 5=#c47a62
+palette = 6=#8fa792
+palette = 7=#c5c2b0
+palette = 8=#6e7260
+palette = 9=#dd7862
+palette = 10=#b5c28c
+palette = 11=#e0b464
+palette = 12=#93aeb8
+palette = 13=#d69a80
+palette = 14=#a3bba6
+palette = 15=#e8e4d4
+background = #2a2a24
+foreground = #c5c2b0
+cursor-color = #c2662f
+cursor-text = #2a2a24
+selection-background = #483626
+selection-foreground = #e8e4d4

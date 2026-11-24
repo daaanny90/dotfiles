@@ -1,0 +1,23 @@
+# Converted from Zed macOS Classic Dark.itermcolors
+palette = 0=#131313
+palette = 1=#c74028
+palette = 2=#62ba46
+palette = 3=#ded9b7
+palette = 4=#c28b12
+palette = 5=#c72855
+palette = 6=#fdd888
+palette = 7=#caccca
+palette = 8=#57564f
+palette = 9=#e7988a
+palette = 10=#b0dca2
+palette = 11=#f0edde
+palette = 12=#f1c464
+palette = 13=#efb0c2
+palette = 14=#fef1d5
+palette = 15=#dddddd
+background = #131313
+foreground = #caccca
+cursor-color = #fdd888
+cursor-text = #131313
+selection-background = #463e2d
+selection-foreground = #dddddd

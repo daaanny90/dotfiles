@@ -1,0 +1,23 @@
+# Converted from Claude Code.itermcolors
+palette = 0=#191917
+palette = 1=#e0685a
+palette = 2=#86c05c
+palette = 3=#d0a85a
+palette = 4=#4a9ae8
+palette = 5=#a98df2
+palette = 6=#5caef0
+palette = 7=#e3e1d9
+palette = 8=#4f4e48
+palette = 9=#e8924a
+palette = 10=#5fc0a8
+palette = 11=#ecdcbb
+palette = 12=#9090c8
+palette = 13=#df8a6c
+palette = 14=#5caef0
+palette = 15=#ffffff
+background = #20201e
+foreground = #e3e1d9
+cursor-color = #4aa3ef
+cursor-text = #20201e
+selection-background = #313740
+selection-foreground = #e3e1d9

@@ -1,0 +1,23 @@
+# Converted from claude-desktop.itermcolors
+palette = 0=#1f1e1d
+palette = 1=#d97757
+palette = 2=#65bb30
+palette = 3=#c1a855
+palette = 4=#5b8ac4
+palette = 5=#9b86f4
+palette = 6=#74abe2
+palette = 7=#c1bfb5
+palette = 8=#6c6a60
+palette = 9=#d4a27f
+palette = 10=#7ab89a
+palette = 11=#eadbbb
+palette = 12=#8a8ab8
+palette = 13=#cb775b
+palette = 14=#74abe2
+palette = 15=#f5f4ef
+background = #2f2f2d
+foreground = #f5f4ef
+cursor-color = #d97757
+cursor-text = #2f2f2d
+selection-background = #3a3a35
+selection-foreground = #f5f4ef

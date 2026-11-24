@@ -1,0 +1,23 @@
+# Converted from Zed Oscilloscope.itermcolors
+palette = 0=#1e1f1c
+palette = 1=#d96a5a
+palette = 2=#8fd072
+palette = 3=#d9b56a
+palette = 4=#7ea8c4
+palette = 5=#b98a9c
+palette = 6=#7ec7c4
+palette = 7=#c4c9bc
+palette = 8=#667058
+palette = 9=#e58273
+palette = 10=#a5e287
+palette = 11=#e6c884
+palette = 12=#93bcd4
+palette = 13=#cba2b2
+palette = 14=#97d6d3
+palette = 15=#e5e8de
+background = #1e1f1c
+foreground = #c4c9bc
+cursor-color = #8fd072
+cursor-text = #1e1f1c
+selection-background = #35422d
+selection-foreground = #e5e8de

@@ -1,0 +1,23 @@
+# Converted from Zed Ayu Mirage.itermcolors
+palette = 0=#242835
+palette = 1=#f18779
+palette = 2=#d5fe80
+palette = 3=#fecf72
+palette = 4=#72cffe
+palette = 5=#5bcde5
+palette = 6=#95e5cb
+palette = 7=#cccac2
+palette = 8=#67696e
+palette = 9=#833f3c
+palette = 10=#75993c
+palette = 11=#937237
+palette = 12=#336d8d
+palette = 13=#2b6c7b
+palette = 14=#4c806f
+palette = 15=#fafafa
+background = #242835
+foreground = #cccac2
+cursor-color = #72cffe
+cursor-text = #242835
+selection-background = #375065
+selection-foreground = #e1e3ea

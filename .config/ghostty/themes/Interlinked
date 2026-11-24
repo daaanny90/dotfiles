@@ -1,0 +1,23 @@
+# Converted from Interlinked.itermcolors
+palette = 0=#0e141a
+palette = 1=#c4605c
+palette = 2=#7ca87c
+palette = 3=#c9a35c
+palette = 4=#7f9cb5
+palette = 5=#b58a98
+palette = 6=#7fb2c4
+palette = 7=#b6c2cc
+palette = 8=#52606d
+palette = 9=#d3756f
+palette = 10=#8fb98f
+palette = 11=#d9b26a
+palette = 12=#93b0c9
+palette = 13=#c49aa8
+palette = 14=#93c4d6
+palette = 15=#d0dae2
+background = #0e141a
+foreground = #b6c2cc
+cursor-color = #d9985f
+cursor-text = #0e141a
+selection-background = #1d2a38
+selection-foreground = #c2ccd4

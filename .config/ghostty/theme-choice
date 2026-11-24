@@ -1,0 +1,20 @@
+# GHOSTTY THEME SELECTION - uncomment ONE line (pair it with tmux/nvim theme-choice)
+# Themes live in ~/.config/ghostty/themes/ (converted from ~/.config/iterm2/*.itermcolors)
+# Reload Ghostty with cmd+shift+,
+
+# INTERLINKED
+# theme = Interlinked
+
+# ZED
+# theme = Zed One Dark
+# theme = Zed Ayu Mirage
+# theme = Zed Graph Paper
+# theme = Zed Oscilloscope
+# theme = Zed Blueprint
+theme = Zed macOS Classic Dark
+
+# CLAUDE DESKTOP
+# theme = claude-desktop
+
+# CLAUDE CODE
+# theme = Claude Code
