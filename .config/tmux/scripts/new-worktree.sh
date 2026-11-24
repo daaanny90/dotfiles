@@ -3,15 +3,20 @@
 # Claude Code session there (integrates with craftzdog/tmux-claude-session-manager).
 #
 # Usage:
-#   new-worktree.sh [--pick] [--in-popup] [<branch>] [<base-ref>]
+#   new-worktree.sh --popup <client> <cwd>
+#   new-worktree.sh [--pick] [--in-popup] [--client <name>] [<branch>] [<base-ref>]
 #
+#   --popup       entry point for the prefix+W binding (via run-shell, which
+#                 reliably expands #{q:client_name} / #{q:pane_current_path}):
+#                 opens the fzf popup on that exact client and re-invokes this
+#                 script inside it with --pick --in-popup --client.
 #   --pick        choose the branch from an fzf list of local branches instead of
 #                 passing it as an argument. Type a NEW name in the prompt + Enter
 #                 to create a brand-new branch. Implied when no <branch> is given.
-#   --in-popup    we are already inside a tmux popup (the prefix+W binding): attach
-#                 to the session directly instead of opening another popup. This
-#                 flag — NOT $TMUX — decides how the session is shown, because a
-#                 popup may run with $TMUX unset.
+#   --in-popup    we are already inside a tmux popup: affects error pauses and the
+#                 not-in-tmux early exit. This flag — NOT $TMUX — decides, because
+#                 a popup may run with $TMUX unset.
+#   --client <c>  the real (outer) client to switch to the worktree session.
 #
 #   <branch>      branch to work on. The worktree CHECKS OUT this branch. Reused
 #                 if it exists (or already lives in a worktree); created otherwise.
@@ -22,19 +27,31 @@
 #   WORKTREE_ROOT       parent dir for new worktrees (default: sibling of the repo).
 #   WORKTREE_INSTALL=1  run `pnpm install` in a freshly created worktree.
 #
-# Sessions are keyed by directory path, so each worktree gets its own Claude
-# session — reachable later with the picker (prefix + u). Note: picking the branch
-# already checked out in the main repo resolves to the repo root (git forbids two
-# checkouts of one branch), so it opens a session on the main checkout, not a worktree.
+# Each worktree gets one human-readable tmux session, wt-<dir basename>, with
+# three windows: claude, edit (nvim) and git (lazygit). The client is SWITCHED
+# to it — never attached inside the popup. Note: picking the branch already checked out in the main repo
+# resolves to the repo root (git forbids two checkouts of one branch), so it
+# opens the session on the main checkout, not a worktree.
 set -euo pipefail
+
+# --- popup wrapper (prefix+W lands here first) --------------------------------
+if [ "${1:-}" = "--popup" ]; then
+  client="${2:-}"
+  cwd="${3:-$PWD}"
+  self="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+  exec tmux display-popup ${client:+-c "$client"} -d "$cwd" -w 90% -h 90% \
+    -E "$self --pick --in-popup --client '$client'"
+fi
 
 # --- args -------------------------------------------------------------------
 PICK=0
 IN_POPUP=0
+CLIENT=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --pick) PICK=1; shift ;;
     --in-popup) IN_POPUP=1; shift ;;
+    --client) CLIENT="${2:-}"; shift 2 ;;
     --) shift; break ;;
     -*) echo "unknown flag: $1" >&2; exit 2 ;;
     *) break ;;
@@ -100,7 +117,13 @@ created=0
 if [ -n "$existing" ]; then
   echo "branch '$BRANCH' already in worktree: $wt_path"
 elif git -C "$repo_root" worktree list --porcelain | grep -qxF "worktree $wt_path"; then
-  echo "reusing existing worktree: $wt_path"
+  # The dir named after this branch is a worktree, but holds a DIFFERENT branch
+  # (otherwise the $existing lookup above would have matched). Opening it would
+  # silently work on the wrong branch.
+  actual="$(git -C "$wt_path" branch --show-current 2>/dev/null || true)"
+  echo "ERROR: $wt_path is checked out on '${actual:-detached HEAD}', not '$BRANCH'." >&2
+  echo "       Rename/remove it first (git worktree remove) or pick that branch instead." >&2
+  exit 1
 elif git -C "$repo_root" show-ref --verify --quiet "refs/heads/$BRANCH"; then
   git -C "$repo_root" worktree add "$wt_path" "$BRANCH"; created=1
 else
@@ -116,7 +139,7 @@ if [ "$created" = 1 ] && [ -f "$wt_path/pnpm-lock.yaml" ]; then
   fi
 fi
 
-# --- open the Claude session in the worktree --------------------------------
+# --- open the worktree session (claude + nvim + lazygit windows) -------------
 # Early-exit only when we are NOT in a popup and genuinely not in tmux; the popup
 # path must never take this branch even if $TMUX is unset inside it.
 if [ "$IN_POPUP" != 1 ] && [ -z "${TMUX:-}" ]; then
@@ -125,22 +148,32 @@ if [ "$IN_POPUP" != 1 ] && [ -z "${TMUX:-}" ]; then
   exit 0
 fi
 
-prefix="$(get_tmux_option @claude_session_prefix 'claude-')"
 cmd="$(get_tmux_option @claude_command 'claude')"
 cargs="$(get_tmux_option @claude_args '')"
 [ -n "$cargs" ] && cmd="$cmd $cargs"
-session="${prefix}$(session_hash "$wt_path")"
 
-tmux has-session -t "$session" 2>/dev/null \
-  || tmux new-session -d -s "$session" -c "$wt_path" "$cmd"
+# Human-readable session name (tmux forbids . and : in session names).
+wt_name="$(basename "$wt_path")"
+session="wt-${wt_name//[.:]/-}"
+# A hash-named session from the old flow keeps winning, so we never end up
+# with two Claudes on the same worktree; it gets the extra windows below.
+legacy="$(get_tmux_option @claude_session_prefix 'claude-')$(session_hash "$wt_path")"
+tmux has-session -t "=$legacy" 2>/dev/null && session="$legacy"
 
-win="$(tmux display-message -p '#{window_id}' 2>/dev/null || true)"
-[ -n "$win" ] && tmux set-option -t "$session" @claude_origin "$win"
+ensure_window() { # <name> <command> — add window to $session if missing
+  tmux list-windows -t "=$session" -F '#{window_name}' 2>/dev/null | grep -qxF "$1" \
+    || tmux new-window -d -t "$session:" -c "$wt_path" -n "$1" "$2"
+}
 
-if [ "$IN_POPUP" = 1 ]; then
-  exec tmux attach-session -t "$session"
+tmux has-session -t "=$session" 2>/dev/null \
+  || tmux new-session -d -s "$session" -c "$wt_path" -n claude "$cmd"
+ensure_window edit nvim
+ensure_window git lazygit
+
+# Jump the real client there — never attach inside the popup (that showed the
+# session twice and let a dying session drop the client out of tmux).
+if [ -n "$CLIENT" ]; then
+  exec tmux switch-client -c "$CLIENT" -t "=$session"
 else
-  w="$(get_tmux_option @claude_popup_width '90%')"
-  h="$(get_tmux_option @claude_popup_height '90%')"
-  exec tmux display-popup -w "$w" -h "$h" -E "tmux attach-session -t $session"
+  exec tmux switch-client -t "=$session"
 fi
