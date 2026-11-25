@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# The claude agent's state beside each window's name: ⏳ asks you something, ⚡ works, ✓ your turn.
+# The claude agent's state beside each window's name: ⏳ asks you something, 🔨 works, ✓ your turn.
 # gig notify (Claude Code's hooks) keeps it in the window option @gig_state; this puts it into the
 # theme's window formats, right after #W (every theme has one). .tmux.conf runs it after sourcing the
 # theme, so a theme switch (which sources .tmux.conf again) keeps it.
